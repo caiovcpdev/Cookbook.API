@@ -1,0 +1,7 @@
+CREATE TABLE Ingredientes (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    ReceitaId INT NOT NULL,
+    Nome NVARCHAR(150) NOT NULL,
+    Quantidade NVARCHAR(50) NOT NULL,
+    CONSTRAINT FK_Ingredientes_Receitas FOREIGN KEY (ReceitaId) REFERENCES Receitas(Id) ON DELETE CASCADE
+);

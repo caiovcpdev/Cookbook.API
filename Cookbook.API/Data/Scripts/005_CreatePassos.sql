@@ -1,0 +1,7 @@
+CREATE TABLE Passos (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    ReceitaId INT NOT NULL,
+    Ordem INT NOT NULL,
+    Descricao NVARCHAR(500) NOT NULL,
+    CONSTRAINT FK_Passos_Receitas FOREIGN KEY (ReceitaId) REFERENCES Receitas(Id) ON DELETE CASCADE
+);

@@ -1,0 +1,5 @@
+CREATE TABLE Categorias (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Nome NVARCHAR(100) NOT NULL,
+    CONSTRAINT UQ_Categorias_Nome UNIQUE (Nome)
+);

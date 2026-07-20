@@ -1,0 +1,16 @@
+services:
+  cookbook-db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: cookbook-sqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "CookBook123!"
+      MSSQL_PID: "Developer"
+    ports:
+      - "1433:1433"
+    volumes:
+      - cookbook-db-data:/var/opt/mssql
+    restart: unless-stopped
+
+volumes:
+  cookbook-db-data:
